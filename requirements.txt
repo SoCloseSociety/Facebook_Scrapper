@@ -1,0 +1,14 @@
+configparser
+emoji==0.5.4
+requests==2.21.0
+selenium==3.141.0
+argparse
+numpy
+random
+keyboard
+pyautogui
+pyshorteners
+colored
+colorama 
+threading
+json
