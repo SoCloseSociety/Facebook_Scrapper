@@ -30,8 +30,8 @@ import json
 import random
 
 ''' ask user to input the instagram post url '''
-link = input("Enter Instagram Image URL: ")
-img = input("enter scrape counr need to scrape")
+link = input("Enter facebook  target URL: ")
+img = input("enter scrape count need to scrape")
 
 list_user_agents = ['Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0']
 ua = UserAgent()
@@ -44,8 +44,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 options = Options()
 options.add_argument("--lang=en")
-options.user_data_dir = "c:\\temp\\profile"
-options.add_argument('--user-data-dir=c:\\temp\\profile22000')
+# options.user_data_dir = "c:\\temp\\profile"
+# options.add_argument('--user-data-dir=c:\\temp\\profile2')
 options.add_argument('--no-first-run --no-service-autorun --password-store=basic')
 options.add_argument("start-maximized")
 options.add_argument('--disable-blink-features=AutomationControlled')
@@ -59,7 +59,7 @@ options.add_argument("--lang=fr")
 options.add_argument("--lang=fr-ca")
 options.add_argument("--lang=aus")
 
-driver = webdriver.Chrome(options=options, executable_path=r"chromedriver.exe")     
+driver = webdriver.Chrome(options=options)#, executable_path=r"chromedriver.exe"     
 
 #driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 time.sleep(1)
@@ -91,6 +91,7 @@ for x in range(1,int(img)):
     except Exception:
         driver.execute_script("window.scrollTo(0, 500000000000)")
         print("exeption")
+        int(img+1)
         time.sleep(5)
 
 print('success')
